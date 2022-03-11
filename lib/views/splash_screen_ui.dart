@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:flutter_app_msu2/views/show_list_ui.dart';
 
 class SplashScreenUI extends StatefulWidget {
   const SplashScreenUI({Key? key}) : super(key: key);
@@ -10,17 +13,16 @@ class SplashScreenUI extends StatefulWidget {
 class _SplashScreenUIState extends State<SplashScreenUI> {
   @override
   void initState() {
-    // TODO: implement initState
     // หน่วงเวลาหน้าจอ
-    // Future.delayed(
-    //   Duration(
-    //     seconds: 5,
-    //   ),
-    //   () => Navigator.pushReplacement(
-    //     context,
-    //     MaterialPageRoute(builder: (context) => SigninUI()),
-    //   ),
-    // );
+    Future.delayed(
+      Duration(
+        seconds: 4,
+      ),
+      () => Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => ShowListUI()),
+      ),
+    );
 
     super.initState();
   }
@@ -28,7 +30,7 @@ class _SplashScreenUIState extends State<SplashScreenUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.yellow[100],
+      backgroundColor: Color(0xFF019D3C),
       body: Stack(
         children: [
           Center(
@@ -36,25 +38,32 @@ class _SplashScreenUIState extends State<SplashScreenUI> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/images/msu_logo.png',
-                  height: 200.0,
+                  'assets/images/fastfood.png',
+                  height: MediaQuery.of(context).size.height * 0.3,
+                ),
+                SizedBox(
+                  height: 20,
                 ),
                 Text(
-                  'มหาวิทยาลัยมหาสารคาม',
+                  'สายด่วนชวนกิน',
                   style: TextStyle(
-                      fontWeight: FontWeight.w800,
-                      fontSize: 28,
-                      color: Colors.grey[700]),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 36,
+                    color: Colors.white,
+                  ),
                 ),
-                Text(
-                  'MAHASARAKHAM UNIVERSITY',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16,
-                      color: Colors.grey[700]),
+                // Text(
+                //   'MAHASARAKHAM UNIVERSITY',
+                //   style: TextStyle(
+                //       fontWeight: FontWeight.w500,
+                //       fontSize: 16,
+                //       color: Colors.grey[700]),
+                // ),
+                SizedBox(
+                  height: 50,
                 ),
                 CircularProgressIndicator(
-                  color: Colors.yellow,
+                  color: Colors.white,
                 )
               ],
             ),
@@ -66,10 +75,10 @@ class _SplashScreenUIState extends State<SplashScreenUI> {
                 bottom: 50,
               ),
               child: Text(
-                'Created by Comcenter Mahasarakham University',
+                'Created by Polaris',
                 style: TextStyle(
-                  color: Colors.grey[600],
-                  fontWeight: FontWeight.w400,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w300,
                 ),
               ),
             ),
